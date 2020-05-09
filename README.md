@@ -7,8 +7,6 @@ Party Parrot のCPUモニタです。
 
 ## Description
 
-### メニュー
-
 タスクバーアイコンを右クリックするとメニューが表示されます。
 
 ![メニュー](img/img2.png)
@@ -17,12 +15,11 @@ Party Parrot のCPUモニタです。
 
 CPUの表示方法を選択します。
 
-Total：全てのコアを1つのアイコンで表示
-Physical Core：物理コアごとに表示
-Logical Core：論理コアごとに表示
+* Total：全てのコアを1つのアイコンで表示
+* Physical Core：物理コアごとに表示
+* Logical Core：論理コアごとに表示
 
 Physical Core を選択した場合は、物理コアのすべてのコアの平均値となります。
-
 
 #### Animation speed
 
@@ -32,7 +29,6 @@ Physical Core を選択した場合は、物理コアのすべてのコアの平
 
 CPU使用率が設定値以下になったときにアニメーションを停止します。
 「None」を選択した場合は停止しません。
-
 
 #### Exit
 
@@ -45,7 +41,7 @@ CPU使用率が設定値以下になったときにアニメーションを停�
 
 ## Install
 
-[PortPopInstaller.msi](https://github.com/tomozh/PPCpuMon/raw/master/PPCpuMonInstaller/Release/PPCpuMonInstaller.msi?raw=true) を実行してインストール、または、[PortPop.exe](https://github.com/tomozh/PortPop/blob/master/PortPop/bin/Release/PortPop.exe?raw=true) を、適当なフォルダに入れて実行して下さい。
+[PortPopInstaller.msi](https://github.com/tomozh/PPCpuMon/blob/master/PPCpuMonInstaller/Release/PPCpuMonInstaller.msi) を実行してインストール、または、[PPCpuMonInstaller.exe](https://github.com/tomozh/PPCpuMon/blob/master/bin/Release/PPCpuMon.exe) を、適当なフォルダに入れて実行して下さい。
 
 実行後は、タスクトレイに常駐します。
 
