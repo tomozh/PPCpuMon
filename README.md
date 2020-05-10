@@ -3,7 +3,7 @@ PPCpuMon
 
 Party Parrot のCPUモニタです。
 
-![タスクバー](img/img1.png)
+[![Party Parrot CPU monitor](https://img.youtube.com/vi/9o4XuVESALk/0.jpg)](https://www.youtube.com/watch?v=9o4XuVESALk)
 
 ## Description
 
