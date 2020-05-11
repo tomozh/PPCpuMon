@@ -49,6 +49,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -197,15 +205,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:PPCpuMon"
-        "ProductCode" = "8:{98500706-B698-44EC-B73D-8DBAF650E840}"
-        "PackageCode" = "8:{C4953B56-DC8D-42F7-81FA-66921773EF00}"
+        "ProductCode" = "8:{F82F00D4-A968-4E75-94EE-A83D9C69819D}"
+        "PackageCode" = "8:{09F86CE9-6ABE-4B65-87CA-D1BAE745A4B2}"
         "UpgradeCode" = "8:{5992B7F9-EEA9-4D01-8C35-262073003DAB}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
-        "RemovePreviousVersions" = "11:FALSE"
+        "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:1.0.1"
         "Manufacturer" = "8:ore-kb.net"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"

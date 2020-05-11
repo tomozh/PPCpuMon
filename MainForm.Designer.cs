@@ -41,6 +41,7 @@
             this.normalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.slowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.samplingIntervalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stopAnimationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,11 +64,12 @@
             this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cpuDisplayModeToolStripMenuItem,
             this.speedToolStripMenuItem,
+            this.samplingIntervalToolStripMenuItem,
             this.stopAnimationToolStripMenuItem,
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
             this.contextMenuStrip.Name = "contextMenuStrip";
-            this.contextMenuStrip.Size = new System.Drawing.Size(211, 134);
+            this.contextMenuStrip.Size = new System.Drawing.Size(224, 158);
             // 
             // cpuDisplayModeToolStripMenuItem
             // 
@@ -76,7 +78,7 @@
             this.physicalCoreToolStripMenuItem,
             this.logicalCoreToolStripMenuItem});
             this.cpuDisplayModeToolStripMenuItem.Name = "cpuDisplayModeToolStripMenuItem";
-            this.cpuDisplayModeToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.cpuDisplayModeToolStripMenuItem.Size = new System.Drawing.Size(223, 24);
             this.cpuDisplayModeToolStripMenuItem.Text = "&CPU";
             // 
             // totalToolStripMenuItem
@@ -108,7 +110,7 @@
             this.slowToolStripMenuItem,
             this.toolStripSeparator2});
             this.speedToolStripMenuItem.Name = "speedToolStripMenuItem";
-            this.speedToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.speedToolStripMenuItem.Size = new System.Drawing.Size(223, 24);
             this.speedToolStripMenuItem.Text = "&Animation speed";
             this.speedToolStripMenuItem.ToolTipText = "Animation speed";
             // 
@@ -138,22 +140,28 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(139, 6);
             // 
+            // samplingIntervalToolStripMenuItem
+            // 
+            this.samplingIntervalToolStripMenuItem.Name = "samplingIntervalToolStripMenuItem";
+            this.samplingIntervalToolStripMenuItem.Size = new System.Drawing.Size(223, 24);
+            this.samplingIntervalToolStripMenuItem.Text = "&CPU sampling interval";
+            // 
             // stopAnimationToolStripMenuItem
             // 
             this.stopAnimationToolStripMenuItem.Name = "stopAnimationToolStripMenuItem";
-            this.stopAnimationToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.stopAnimationToolStripMenuItem.Size = new System.Drawing.Size(223, 24);
             this.stopAnimationToolStripMenuItem.Text = "&Stop animation";
             this.stopAnimationToolStripMenuItem.ToolTipText = "Stop animation when CPU load is low";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(207, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(220, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(223, 24);
             this.exitToolStripMenuItem.Text = "&Exit";
             this.exitToolStripMenuItem.ToolTipText = "Leave the perty";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
@@ -188,6 +196,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem stopAnimationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem samplingIntervalToolStripMenuItem;
     }
 }
 

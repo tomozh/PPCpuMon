@@ -185,17 +185,30 @@ namespace PPCpuMon
             // メニュー：アニメ停止閾値
             var loads = new int[] { 0, 1, 5, 10, 15, 20 };
 
-            foreach(var load in loads)
+            foreach (var load in loads)
             {
                 string text = (load <= 0) ? "None" : "CPU <= " + load.ToString() + "%";
                 ToolStripItem item = stopAnimationToolStripMenuItem.DropDownItems.Add(text);
                 item.Tag = load;
-                item.Click += stopAnimationToolStripMenuItemClick;
+                item.Click += StopAnimationToolStripMenuItemClick;
             }
+
+            // メニュー：CPU使用率サンプリング間隔
+            var samples = new int[] { 250, 500, 1000, 2000, 5000 };
+
+            foreach (var sample in samples)
+            {
+                string text = sample.ToString() + "ms";
+                ToolStripItem item = samplingIntervalToolStripMenuItem.DropDownItems.Add(text);
+                item.Tag = sample;
+                item.Click += SamplingIntervalToolStripMenuItemClick;
+            }
+
 
             ChangeDisplayMode((DISPLAY_MODE)Properties.Settings.Default.DisplayMode);
             ChangeAnimationSpeed((int)Properties.Settings.Default.AnimationSpeed);
             ChangeStopAnimationCpuLoad(Properties.Settings.Default.StopAnimationCpuLoad);
+            ChangeCpuSamplingInterval(Properties.Settings.Default.CPUSamplingInterval);
 
             InitAllIcons();
         }
@@ -388,6 +401,7 @@ namespace PPCpuMon
                 ci.UpdateIcon();
             }
 
+            timerAnimation.Interval = Properties.Settings.Default.AnimationSpeed;
             timerAnimation.Enabled = true;
         }
 
@@ -398,10 +412,15 @@ namespace PPCpuMon
         /// <param name="e"></param>
         private void TimerMonitor_Tick(object sender, EventArgs e)
         {
+            timerMonitor.Enabled = false;
+
             foreach (var ci in _cpuItems)
             {
                 ci.UpdateProsessorTime();
             }
+
+            timerMonitor.Interval = Properties.Settings.Default.CPUSamplingInterval;
+            timerMonitor.Enabled = true;
         }
 
         /// <summary>
@@ -451,7 +470,6 @@ namespace PPCpuMon
             }
             
             Properties.Settings.Default.AnimationSpeed = (int)speed;
-            timerAnimation.Interval = speed;
         }
 
         /// <summary>
@@ -469,6 +487,28 @@ namespace PPCpuMon
             }
 
             Properties.Settings.Default.StopAnimationCpuLoad = (int)cpuLoad;
+        }
+
+        /// <summary>
+        /// CPU使用率サンプリング間隔を設定する
+        /// </summary>
+        /// <param name="interval">CPU使用率(0:停止しない)</param>
+        private void ChangeCpuSamplingInterval(int interval)
+        {
+            foreach (var item in samplingIntervalToolStripMenuItem.DropDownItems)
+            {
+                if (item is ToolStripMenuItem menuItem)
+                {
+                    menuItem.Checked = ((int)menuItem.Tag == interval);
+                }
+            }
+
+            if (interval < 100)
+            {
+                interval = 100;
+            }
+
+            Properties.Settings.Default.CPUSamplingInterval = (int)interval;
         }
 
         /// <summary>
@@ -495,14 +535,25 @@ namespace PPCpuMon
         }
 
         /// <summary>
-        /// メニューのアニメーション停止CPU閾値が変更された
+        /// メニューの「Animation speed」が変更された
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void stopAnimationToolStripMenuItemClick(object sender, EventArgs e)
+        private void StopAnimationToolStripMenuItemClick(object sender, EventArgs e)
         {
             var menu = (ToolStripMenuItem)sender;
             ChangeStopAnimationCpuLoad((int)menu.Tag);
+        }
+
+        /// <summary>
+        /// メニューの「CPU sampling interval」が変更された
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SamplingIntervalToolStripMenuItemClick(object sender, EventArgs e)
+        {
+            var menu = (ToolStripMenuItem)sender;
+            ChangeCpuSamplingInterval((int)menu.Tag);
         }
     }
 }
