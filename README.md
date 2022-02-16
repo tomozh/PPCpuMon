@@ -5,7 +5,7 @@ Party Parrot のCPUモニタです。
 
 [![Party Parrot CPU monitor](https://img.youtube.com/vi/9o4XuVESALk/0.jpg)](https://www.youtube.com/watch?v=9o4XuVESALk)
 
-## Description
+## 使い方
 
 タスクバーアイコンを右クリックするとメニューが表示されます。
 
@@ -38,12 +38,12 @@ CPU使用率のサンプリング間隔を設定します。
 
 アプリケーションを終了します。
 
-## Requirement
+## 動作環境
 
 * Microsoft Windows 7 以降
 * Microsoft .net Framework 3.6 以降
 
-## Install
+## インストール方法
 
 [PPCpuMonInstaller.msi](https://github.com/tomozh/PPCpuMon/blob/master/PPCpuMonInstaller/Release/PPCpuMonInstaller.msi?raw=true) を実行してインストール、または、[PPCpuMon.exe](https://github.com/tomozh/PPCpuMon/blob/master/bin/Release/PPCpuMon.exe?raw=true) を、適当なフォルダに入れて実行して下さい。
 
@@ -51,10 +51,25 @@ CPU使用率のサンプリング間隔を設定します。
 
 インストーラでインストールした場合は、スタートアップへ自動的に登録されます。(ログオン時に自動起動します)
 
-## Licence
+## トラブルシューティング
+
+### 「エラー：無効なインデックス '' がレジストリから読み取られたため、カウンター名データを読み込むことができません。」というエラーが出て起動しない
+
+パフォーマンスカウンタが破損している可能性があります。以下の手順に従って操作を行ってから、アプリケーションを起動してみて下さい。
+
+1. コマンドプロンプト、または Windows PowerShell を管理者モードで起動する。(例：スタートボタンを右クリックして「Windows PowerShell (管理者)」を実行)
+2. 以下のコマンドを実行する。
+~~~
+cd C:\Windows\System32
+lodctr /R
+cd C:\Windows\SysWOW64
+lodctr /R
+~~~
+ 
+## ライセンス
 
 [MIT](https://opensource.org/licenses/mit-license.php)
 
-## Author
+## 著作者
 
 [tomozh](http://ore-kb.net)
